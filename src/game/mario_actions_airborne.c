@@ -79,7 +79,7 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
     if (m->action != ACT_TWIRLING && m->floor->type != SURFACE_BURNING) {
         if (m->vel[1] < -55.0f) {
             if (fallHeight > 3000.0f) {
-                m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 16 : 24;
+                //m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 16 : 24;
 #ifdef VERSION_SH
                 queue_rumble_data(5, 80);
 #endif
@@ -87,13 +87,13 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
                 play_sound(SOUND_MARIO_ATTACKED, m->marioObj->header.gfx.cameraToObject);
                 return drop_and_set_mario_action(m, hardFallAction, 4);
             } else if (fallHeight > damageHeight && !mario_floor_is_slippery(m)) {
-                m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 8 : 12;
-                m->squishTimer = 30;
+                //m->hurtCounter += (m->flags & MARIO_CAP_ON_HEAD) ? 8 : 12;
+                m->squishTimer = 10;
 #ifdef VERSION_SH
                 queue_rumble_data(5, 80);
 #endif
                 set_camera_shake_from_hit(SHAKE_FALL_DAMAGE);
-                play_sound(SOUND_MARIO_ATTACKED, m->marioObj->header.gfx.cameraToObject);
+                play_sound(SOUND_OBJ_THWOMP, m->marioObj->header.gfx.cameraToObject);
             }
         }
     }
@@ -943,6 +943,8 @@ s32 act_ground_pound(struct MarioState *m) {
 
         stepResult = perform_air_step(m, 0);
         if (stepResult == AIR_STEP_LANDED) {
+            play_sound(SOUND_OBJ_THWOMP, m->marioObj->header.gfx.cameraToObject);
+
             if (should_get_stuck_in_ground(m)) {
 #ifdef VERSION_SH
                 queue_rumble_data(5, 80);

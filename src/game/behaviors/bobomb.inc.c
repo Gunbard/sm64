@@ -35,8 +35,8 @@ void bobomb_act_explode(void) {
         explosion = spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
         explosion->oGraphYOffset += 100.0f;
 
-        bobomb_spawn_coin();
-        create_respawner(MODEL_BLACK_BOBOMB, bhvBobomb, 3000);
+        //bobomb_spawn_coin();
+        //create_respawner(MODEL_BLACK_BOBOMB, bhvBobomb, 3000);
         o->activeFlags = 0;
     }
 }
@@ -204,7 +204,7 @@ void bobomb_thrown_loop(void) {
     o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
     o->oHeldState = 0;
     o->oFlags &= ~0x8; /* bit 3 */
-    o->oForwardVel = 25.0;
+    o->oForwardVel = 100.0;//25.0;
     o->oVelY = 20.0;
     o->oAction = BOBOMB_ACT_LAUNCHED;
 }

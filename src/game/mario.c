@@ -824,7 +824,7 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
         case ACT_JUMP:
         case ACT_HOLD_JUMP:
             m->marioObj->header.gfx.unk38.animID = -1;
-            set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.25f);
+            set_mario_y_vel_based_on_fspeed(m, 42.0f, 10.0f);
             m->forwardVel *= 0.8f;
             break;
 
@@ -980,6 +980,11 @@ static u32 set_mario_action_cutscene(struct MarioState *m, u32 action, UNUSED u3
  * specific function if needed.
  */
 u32 set_mario_action(struct MarioState *m, u32 action, u32 actionArg) {
+    if (action == ACT_PUNCHING || action == ACT_MOVE_PUNCHING) {
+        struct Object *bomb = spawn_object_relative(0, 0, 0, 200, m->marioObj, MODEL_BLACK_BOBOMB, bhvBobomb);
+        bomb->oHeldState = HELD_THROWN;
+    }
+    
     switch (action & ACT_GROUP_MASK) {
         case ACT_GROUP_MOVING:
             action = set_mario_action_moving(m, action, actionArg);

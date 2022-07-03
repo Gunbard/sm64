@@ -904,34 +904,34 @@ u32 interact_warp_door(struct MarioState *m, UNUSED u32 interactType, struct Obj
     u32 actionArg;
 
     if (m->action == ACT_WALKING || m->action == ACT_DECELERATING) {
-        if (warpDoorId == 1 && !(saveFlags & SAVE_FLAG_UNLOCKED_UPSTAIRS_DOOR)) {
-            if (!(saveFlags & SAVE_FLAG_HAVE_KEY_2)) {
-                if (!sDisplayingDoorText) {
-                    set_mario_action(m, ACT_READING_AUTOMATIC_DIALOG,
-                                     (saveFlags & SAVE_FLAG_HAVE_KEY_1) ? DIALOG_023 : DIALOG_022);
-                }
-                sDisplayingDoorText = TRUE;
+        // if (warpDoorId == 1 && !(saveFlags & SAVE_FLAG_UNLOCKED_UPSTAIRS_DOOR)) {
+        //     if (!(saveFlags & SAVE_FLAG_HAVE_KEY_2)) {
+        //         if (!sDisplayingDoorText) {
+        //             set_mario_action(m, ACT_READING_AUTOMATIC_DIALOG,
+        //                              (saveFlags & SAVE_FLAG_HAVE_KEY_1) ? DIALOG_023 : DIALOG_022);
+        //         }
+        //         sDisplayingDoorText = TRUE;
 
-                return FALSE;
-            }
+        //         return FALSE;
+        //     }
 
-            doorAction = ACT_UNLOCKING_KEY_DOOR;
-        }
+        //     doorAction = ACT_UNLOCKING_KEY_DOOR;
+        // }
 
-        if (warpDoorId == 2 && !(saveFlags & SAVE_FLAG_UNLOCKED_BASEMENT_DOOR)) {
-            if (!(saveFlags & SAVE_FLAG_HAVE_KEY_1)) {
-                if (!sDisplayingDoorText) {
-                    // Moat door skip was intended confirmed
-                    set_mario_action(m, ACT_READING_AUTOMATIC_DIALOG,
-                                     (saveFlags & SAVE_FLAG_HAVE_KEY_2) ? DIALOG_023 : DIALOG_022);
-                }
-                sDisplayingDoorText = TRUE;
+        // if (warpDoorId == 2 && !(saveFlags & SAVE_FLAG_UNLOCKED_BASEMENT_DOOR)) {
+        //     if (!(saveFlags & SAVE_FLAG_HAVE_KEY_1)) {
+        //         if (!sDisplayingDoorText) {
+        //             // Moat door skip was intended confirmed
+        //             set_mario_action(m, ACT_READING_AUTOMATIC_DIALOG,
+        //                              (saveFlags & SAVE_FLAG_HAVE_KEY_2) ? DIALOG_023 : DIALOG_022);
+        //         }
+        //         sDisplayingDoorText = TRUE;
 
-                return FALSE;
-            }
+        //         return FALSE;
+        //     }
 
-            doorAction = ACT_UNLOCKING_KEY_DOOR;
-        }
+        //     doorAction = ACT_UNLOCKING_KEY_DOOR;
+        // }
 
         if (m->action == ACT_WALKING || m->action == ACT_DECELERATING) {
             actionArg = should_push_or_pull_door(m, o) + 0x00000004;
@@ -998,7 +998,7 @@ u32 interact_door(struct MarioState *m, UNUSED u32 interactType, struct Object *
     s16 numStars = save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1);
 
     if (m->action == ACT_WALKING || m->action == ACT_DECELERATING) {
-        if (numStars >= requiredNumStars) {
+        if (numStars >= 0) {
             u32 actionArg = should_push_or_pull_door(m, o);
             u32 enterDoorAction;
             u32 doorSaveFileFlag;
@@ -1042,6 +1042,7 @@ u32 interact_door(struct MarioState *m, UNUSED u32 interactType, struct Object *
                     text = DIALOG_028 << 16;
                     break;
                 case 70:
+                default:
                     text = DIALOG_029 << 16;
                     break;
             }

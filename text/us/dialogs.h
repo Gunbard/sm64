@@ -276,18 +276,13 @@ quietly in the hallway!"))
 
 DEFINE_DIALOG(DIALOG_020, 1, 6, 95, 150, _("\
 Dear Mario:\n\
-Please come to the\n\
-castle. I've baked\n\
-a cake for you.\n\
+I want your stanky Italian\n\
+ass in my face.\n\
 Yours truly--\n\
-Princess Toadstool"))
+Princess Peachybitch"))
 
 DEFINE_DIALOG(DIALOG_021, 1, 5, 95, 200, _("\
-Welcome.\n\
-No one's home!\n\
-Now " SCRAM "\n\
-and don't come back!\n\
-Gwa ha ha!"))
+Go away, fucker."))
 
 DEFINE_DIALOG(DIALOG_022, 1, 2, 95, 200, _("\
 You need a key to open\n\
@@ -402,39 +397,7 @@ around. Now, head for\n\
 the castle."))
 
 DEFINE_DIALOG(DIALOG_034, 1, 6, 30, 200, _("\
-Good afternoon. The\n\
-Lakitu Bros., here,\n\
-reporting live from just\n\
-outside the Princess's\n\
-castle.\n\
-\n\
-Mario has just arrived\n\
-on the scene, and we'll\n\
-be filming the action live\n\
-as he enters the castle\n\
-and pursues the missing\n\
-Power Stars.\n\
-As seasoned cameramen,\n\
-we'll be shooting from the\n\
-recommended angle, but\n\
-you can change the\n\
-camera angle by pressing\n\
-the [C] Buttons.\n\
-If we can't adjust the\n\
-view any further, we'll\n\
-buzz. To take a look at\n\
-the surroundings, stop\n\
-and press [C]^.\n\
-\n\
-Press [A] to resume play.\n\
-Switch camera modes with\n\
-the [R] Button. Signs along\n\
-the way will review these\n\
-instructions.\n\
-\n\
-For now, reporting live,\n\
-this has been the\n\
-Lakitu Bros."))
+Fuck off."))
 
 DEFINE_DIALOG(DIALOG_035, 1, 5, 30, 200, _("\
 There are four camera, or\n\
@@ -1575,35 +1538,15 @@ disqualified! Next time,\n\
 play fair!"))
 
 DEFINE_DIALOG(DIALOG_133, 1, 6, 30, 200, _("\
-Am I glad to see you! The\n\
+Holy shit you fucker! The\n\
 Princess...and I...and,\n\
-well, everybody...we're all\n\
-trapped inside the castle\n\
-walls.\n\
+we banged and shiettttt\n\
+inside the fucking castle\n\
+walls. Bunghole.\n\
 \n\
-Bowser has stolen the\n\
-castle's Stars, and he's\n\
-using their power to\n\
-create his own world in\n\
-the paintings and walls.\n\
-\n\
-Please recover the Power\n\
-Stars! As you find them,\n\
-you can use their power\n\
-to open the doors that\n\
-Bowser has sealed.\n\
-\n\
-There are four rooms on\n\
-the first floor. Start in\n\
-the one with the painting\n\
-of Bob-omb inside. It's\n\
-the only room that Bowser\n\
-hasn't sealed.\n\
-When you collect eight\n\
-Power Stars, you'll be\n\
-able to open the door\n\
-with the big star. The\n\
-Princess must be inside!"))
+Get the fuck out and \n\
+return to your people!\n\
+Bitch."))
 
 DEFINE_DIALOG(DIALOG_134, 1, 5, 30, 200, _("\
 The names of the Stars\n\
