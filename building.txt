@@ -1,0 +1,2 @@
+make COMPARE=0
+cp -f build/us/sm64.us.z64 /media/sf_Shared/
